@@ -10,8 +10,7 @@ wget https://go.dev/dl/go$version.linux-amd64.tar.gz
 sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go$version.linux-amd64.tar.gz
 # Add /usr/local/go/bin to the PATH environment variable.
 echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.profile
+echo 'export PATH=$PATH:$HOME/go/bin' >> ~/.profile
 # Remove archive.
 rm -rf go$version.linux-amd64.tar.gz
 
-# Reload .profile
-source ~/.profile

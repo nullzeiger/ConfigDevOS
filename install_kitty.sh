@@ -17,3 +17,6 @@ sed -i "s|Icon=kitty|Icon=$(readlink -f ~)/.local/kitty.app/share/icons/hicolor/
 sed -i "s|Exec=kitty|Exec=$(readlink -f ~)/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
 # Make xdg-terminal-exec (and hence desktop environments that support it use kitty)
 echo 'kitty.desktop' > ~/.config/xdg-terminals.list
+# Copy kitty.conf in .config/kitty
+mkdir -p ~/./config/kitty
+cp kitty.conf ~/.config/kitty/

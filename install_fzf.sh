@@ -3,7 +3,7 @@
 set -e
 
 # Version
-version="0.65.1"
+version="0.67.0"
 # Download pre-built binaries of fzf
 wget https://github.com/junegunn/fzf/releases/download/v$version/fzf-$version-linux_amd64.tar.gz
 # Extract the archive

@@ -14,3 +14,6 @@ mkdir -p ~/.local/bin
 ln -sf ~/.local/nvim.app/bin/nvim ~/.local/bin/
 # Delete archive
 rm -rf nvim-linux-x86_64.tar.gz
+# Copy init.lua in ~/.config/nvim
+mkdir -p ~/.config/nvim
+cp init.lua ~/.config/nvim/

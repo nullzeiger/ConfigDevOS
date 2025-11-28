@@ -3,7 +3,7 @@
 set -e
 
 # Version
-version="2.76.2"
+version="2.83.1"
 # Download pre-built binaries of gh cli
 wget https://github.com/cli/cli/releases/download/v$version/gh_${version}_linux_amd64.tar.gz
 # Extract the archive

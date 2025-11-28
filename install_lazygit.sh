@@ -3,7 +3,7 @@
 set -e
 
 # Version
-version="0.54.2"
+version="0.56.0"
 # Download pre-built binaries of lazygit
 wget https://github.com/jesseduffield/lazygit/releases/download/v$version/lazygit_${version}_Linux_x86_64.tar.gz
 # Extract the archive

@@ -1,6 +1,7 @@
 #!/usr/bin/env perl
-use v5.35;
+use v5.38;
 use feature qw(say);
+use POSIX qw(WEXITSTATUS);
 
 sub main {
     my @packages = qw(gcc gdb make valgrind curl git);
@@ -38,7 +39,8 @@ sub execute_command {
     say "Executing: $cmd";
     system($cmd);
     if ($? != 0) {
-        die "$err: exit code " . ($? >> 8) . "\n";
+    	my $exit_status = WEXITSTATUS($?);
+        die "$err: exit code $exit_status\n";
     }
 }
 
