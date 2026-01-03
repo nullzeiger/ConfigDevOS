@@ -8,6 +8,11 @@ vim.opt.undofile = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
+-- Set indentation
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4  
+vim.opt.smartindent = true
+
 -- Set the update time for CursorHold to trigger more quickly
 vim.opt.updatetime = 300
 vim.cmd [[
@@ -90,8 +95,8 @@ vim.api.nvim_create_autocmd("FileType", {
 
       settings = {
         gopls = {
-          gofumpt = true,
-          staticcheck = true,
+          gofumpt = false,
+          staticcheck = false,
           analyses = {
             unusedparams = true,
           },
@@ -106,7 +111,8 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   desc = 'Imports and Formatting',
   pattern = "*.go",
   callback = function()
-    local params = vim.lsp.util.make_range_params()
+    local params = vim.lsp.util.make_range_params(0, "utf-16")
+    
     params.context = { only = { "source.organizeImports" } }
 
     local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params)
@@ -119,9 +125,9 @@ vim.api.nvim_create_autocmd("BufWritePre", {
         end
       end
     end
+    
     vim.lsp.buf.format({ async = false })
   end
 })
 
--- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
