@@ -1,0 +1,9 @@
+[
+  {
+    "name": "lazygit",
+    "owner": "jesseduffield",
+    "repo": "lazygit",
+    "asset_pattern": "linux_x86_64.tar.gz",
+    "version_flag": "--version"
+  }
+]
